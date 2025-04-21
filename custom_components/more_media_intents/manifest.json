@@ -1,0 +1,10 @@
+{
+  "domain": "more_media_intents",
+  "name": "More Media Intents",
+  "documentation": "https://github.com/acidcoke/more-media-intents",
+  "issue_tracker": "https://github.com/acidcoke/more-media-intents/issues",
+  "dependencies": [],
+  "config_flow": true,
+  "codeowners": ["@acidcoke"],
+  "requirements": []
+}

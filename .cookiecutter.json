@@ -1,0 +1,13 @@
+{
+  "_checkout": "2021.1.1",
+  "_output_dir": "/home/holi/hass-custom-comp",
+  "_repo_dir": "/home/holi/.cookiecutters/cookiecutter-homeassistant-custom-component",
+  "_template": "git@github.com:oncleben31/cookiecutter-homeassistant-custom-component.git",
+  "class_name_prefix": "MoreMediaIntents",
+  "domain_name": "more_media_intents",
+  "friendly_name": "More Media Intents",
+  "github_user": "acidcoke",
+  "project_name": "more-media-intents",
+  "test_suite": "yes",
+  "version": "0.0.1"
+}
