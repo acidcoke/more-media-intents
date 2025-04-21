@@ -1,11 +1,11 @@
 """Sample API Client."""
 
 import asyncio
+import asyncio.timeout
 import logging
 import socket
 
 import aiohttp
-import asyncio.timeout
 
 TIMEOUT = 10
 
@@ -16,6 +16,8 @@ HEADERS = {"Content-type": "application/json; charset=UTF-8"}
 
 
 class MoreMediaIntentsApiClient:
+    """Sample Client."""
+
     def __init__(
         self, username: str, password: str, session: aiohttp.ClientSession
     ) -> None:
@@ -39,7 +41,7 @@ class MoreMediaIntentsApiClient:
     ) -> dict:
         """Get information from the API."""
         try:
-            async with async_timeout.timeout(TIMEOUT, loop=asyncio.get_event_loop()):
+            async with asyncio.timeout(TIMEOUT, loop=asyncio.get_event_loop()):
                 if method == "get":
                     response = await self._session.get(url, headers=headers)
                     return await response.json()
@@ -72,5 +74,5 @@ class MoreMediaIntentsApiClient:
                 url,
                 exception,
             )
-        except Exception as exception:  # pylint: disable=broad-except
-            _LOGGER.error("Something really wrong happened! - %s", exception)
+        # except Exception as exception:  # pylint: disable=broad-except
+        # _LOGGER.error("Something really wrong happened! - %s", exception)
