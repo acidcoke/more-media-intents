@@ -1,10 +1,10 @@
 """Tests for More Media Intents api."""
+
 import asyncio
 
 import aiohttp
-from custom_components.more_media_intents.api import (
-    MoreMediaIntentsApiClient,
-)
+
+from custom_components.more_media_intents.api import MoreMediaIntentsApiClient
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 

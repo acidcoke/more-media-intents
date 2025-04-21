@@ -1,14 +1,13 @@
 """Adds config flow for More Media Intents."""
+
 import voluptuous as vol
+
 from homeassistant import config_entries
 from homeassistant.core import callback
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
 
 from .api import MoreMediaIntentsApiClient
-from .const import CONF_PASSWORD
-from .const import CONF_USERNAME
-from .const import DOMAIN
-from .const import PLATFORMS
+from .const import CONF_PASSWORD, CONF_USERNAME, DOMAIN, PLATFORMS
 
 
 class MoreMediaIntentsFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
@@ -37,8 +36,7 @@ class MoreMediaIntentsFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                 return self.async_create_entry(
                     title=user_input[CONF_USERNAME], data=user_input
                 )
-            else:
-                self._errors["base"] = "auth"
+            self._errors["base"] = "auth"
 
             return await self._show_config_form(user_input)
 

@@ -1,4 +1,5 @@
 """Constants for More Media Intents."""
+
 # Base component constants
 NAME = "More Media Intents"
 DOMAIN = "more_media_intents"

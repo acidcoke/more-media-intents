@@ -1,10 +1,11 @@
 """Sample API Client."""
+
 import asyncio
 import logging
 import socket
 
 import aiohttp
-import async_timeout
+import asyncio.timeout
 
 TIMEOUT = 10
 
@@ -43,7 +44,7 @@ class MoreMediaIntentsApiClient:
                     response = await self._session.get(url, headers=headers)
                     return await response.json()
 
-                elif method == "put":
+                if method == "put":
                     await self._session.put(url, headers=headers, json=data)
 
                 elif method == "patch":
@@ -52,7 +53,7 @@ class MoreMediaIntentsApiClient:
                 elif method == "post":
                     await self._session.post(url, headers=headers, json=data)
 
-        except asyncio.TimeoutError as exception:
+        except TimeoutError as exception:
             _LOGGER.error(
                 "Timeout error fetching information from %s - %s",
                 url,
